@@ -7,7 +7,7 @@ def licenses(dependency_file, app_name, license_file):
     with open(dependency_file) as f:
         dependency_dictionary = json.load(f)
 
-    if dependency_dictionary.get("lockfileVersion") == 2 || dependency_dictionary.get("lockfileVersion") == 3:
+    if dependency_dictionary.get("lockfileVersion") == 2 or dependency_dictionary.get("lockfileVersion") == 3:
         dependencies = parse_v2_lock_file(dependency_dictionary)
     elif dependency_dictionary.get("lockfileVersion") == 1:
         dependencies = parse_v1_lock_file(dependency_dictionary)
